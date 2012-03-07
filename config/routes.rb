@@ -5,6 +5,8 @@ Roshambo::Application.routes.draw do
 
   get "throw/scissors"
 
+  get "throw/stats"
+
   match "/stats", :to => 'throw#stats'
   match "/throw", :to => 'throw#instructions'
   match "/throw/", :to => 'throw#instructions'
