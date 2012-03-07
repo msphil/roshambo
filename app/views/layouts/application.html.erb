@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Roshambo</title>
+  <title><%= title %></title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
 
-<%= yield %>
+  <%= yield %>
+
+  <div>
+    You can play via these links:
+    <% ["rock", "paper", "scissors"].each do |link| @link = link %>
+      <a href="/throw/<%= @link %>"><%= @link %></a>, 
+    <% end %>
+    or <a href="/stats/">view stats</a>.
+  </div>
 
 </body>
 </html>

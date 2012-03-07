@@ -5,6 +5,11 @@ Roshambo::Application.routes.draw do
 
   get "throw/scissors"
 
+  match "/stats", :to => 'throw#stats'
+  match "/throw", :to => 'throw#instructions'
+  match "/throw/", :to => 'throw#instructions'
+  root :to => 'throw#instructions'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
